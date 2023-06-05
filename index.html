@@ -102,6 +102,95 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    // Console Log 
+    errorBtns[0].addEventListener('click', e => {
+      console.log('This is a log message');
+    });
+
+    // Console Error
+    errorBtns[1].addEventListener('click', e => {
+      console.error('This is an error message');
+    });
+
+    // Console Count
+    errorBtns[2].addEventListener('click', e => {
+      console.error('This is a count message');
+    });
+
+    // Console Warn
+    errorBtns[3].addEventListener('click', e => {
+      console.warn('This is a warn message');
+    });
+
+    // Console Assert
+    errorBtns[4].addEventListener('click', e => {
+      const value = 10;
+      const message = 'The value is not 10';
+
+      console.assert(value === 10, message);
+    });
+
+    // Console Clear
+    errorBtns[5].addEventListener('click', e => {
+      console.clear();
+    });
+
+    // Console Dir
+    errorBtns[6].addEventListener('click', e => {
+      const obj = {
+        "name": "John Doe",
+        "age": 22,
+        "occupation": "Student"
+      };
+
+      console.dir(obj);
+    });
+
+    // Console Dirxml
+    errorBtns[7].addEventListener('click', e => {
+      const xml = 
+      <root>
+        <child1>1</child1>
+        <child2>2</child2>
+        <child3>3</child3>
+      </root>
+    });
+
+    // Console Group Start
+    errorBtns[8].addEventListener('click', e => {
+      console.group('This is a group start message');
+    });
+
+    // Console Group End
+    errorBtns[9].addEventListener('click', e => {
+      console.groupEnd();
+    });
+
+    // Console Table
+    errorBtns[10].addEventListener('click', e => {
+      console.table(["first element", "second element", "third element"])
+    });
+    
+    // Start Timer
+    errorBtns[11].addEventListener('click', e => {
+      console.time();
+    });
+
+    // End Timer
+    errorBtns[12].addEventListener('click', e => {
+      console.timeEnd();
+    });
+
+    // Console Trace
+    errorBtns[13].addEventListener('click', e => {
+      console.trace();
+    });
+
+    // Global Error
+    errorBtns[14].addEventListener('click', e => {
+      throw new Error('This is a global error');
+    });
   </script>
 </body>
 
