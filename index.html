@@ -96,6 +96,40 @@
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+
+      try {
+        if (isNaN(firstNum) || isNaN(secondNum)) {
+          throw new Error('Invalid input.');
+        }
+        let result;
+        switch (operator) {
+          case '+':
+            result = parseFloat(firstNum) + parseFloat(secondNum);
+            break;
+          case '-':
+            result = parseFloat(firstNum) - parseFloat(secondNum);
+            break;
+          case '*':
+            result = parseFloat(firstNum) * parseFloat(secondNum);
+            break;
+          case '/':
+            if (secondNum === '0') {
+              throw new Error('Invalid operation: Division by 0.');
+            }
+            result = parseFloat(firstNum) / parseFloat(secondNum);
+            break;
+          default:
+            throw new Error('Invalid operator: Please select a valid operator.');
+        }
+
+        output.innerHTML = result;
+      } 
+      catch (error) {
+        output.innerHTML = 'Error: ' + error.message;
+      } 
+      finally {
+        console.log("This has reached the 'finally' block");
+      }
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
